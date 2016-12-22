@@ -35,7 +35,11 @@ DigitalOut led2(LED2);  // For Modbus worker.
 DigitalOut led3(LED3);  // For Holder CB
 
 #define DEF_PIN_NUM 6
+#if defined(TARGET_NUMAKER_PFM_NUC472)
 DigitalIn DipSwitch[DEF_PIN_NUM] = { PG_1, PG_2, PF_9, PF_10, PC_10, PC_11 } ;
+#elif defined(TARGET_NUMAKER_PFM_M453)
+DigitalIn DipSwitch[DEF_PIN_NUM] = { PD_6, PD_1, PC_6, PC_7, PC_11, PC_12 };
+#endif
 
 unsigned short GetValueOnDipSwitch()
 {
