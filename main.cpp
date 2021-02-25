@@ -70,7 +70,9 @@ main( void )
     eMBErrorCode    eStatus;
     //Thread uart_thread(worker_uart);
     unsigned short usSlaveID=GetValueOnDipSwitch();
-    
+#ifdef MBED_MAJOR_VERSION
+    printf("Mbed OS version %d.%d.%d\r\n\n", MBED_MAJOR_VERSION, MBED_MINOR_VERSION, MBED_PATCH_VERSION);
+#endif     
     // Initialise some registers
     for (int i=0; i<REG_INPUT_NREGS; i++)
          usRegInputBuf[i] = 0x0;
@@ -97,7 +99,11 @@ FAIL_MB:
     for( ;; )
     {
         led2 = !led2;
+#if MBED_MAJOR_VERSION >= 6
+	ThisThread::sleep_for(200);
+#else
         Thread::wait(200);
+#endif
     }
 }
 
