@@ -34,8 +34,8 @@ DigitalOut led1(LED1);  // For temperature worker.
 DigitalOut led2(LED2);  // For Modbus worker.
 DigitalOut led3(LED3);  // For Holder CB
 
-#define DEF_PIN_NUM 6
-DigitalIn DipSwitch[DEF_PIN_NUM] = { D0, D1, D2, D3, D4, D5 } ;
+#define DEF_PIN_NUM 4
+DigitalIn DipSwitch[DEF_PIN_NUM] = {D2, D3, D4, D5 } ;
 
 unsigned short GetValueOnDipSwitch()
 {
