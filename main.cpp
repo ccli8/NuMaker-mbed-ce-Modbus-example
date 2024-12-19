@@ -1,10 +1,3 @@
-/*
-* The program is a sample code. 
-* It needs run with some NuMaker-PFM-NUC472 boards.
-*
-* Please remeber to modify global definition to enable RS485 port on board.
-* Modify '//#define DEF_RS485_PORT 1' to '#define DEF_RS485_PORT 1'
-*/
 
 /* ----------------------- System includes --------------------------------*/
 #include "mbed.h"
